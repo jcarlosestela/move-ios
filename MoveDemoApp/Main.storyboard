@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--First View Controller-->
         <scene sceneID="C1B-MF-fvW">
             <objects>
-                <viewController id="Tqe-B2-hhZ" customClass="ViewController" customModule="MoveDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Tqe-B2-hhZ" customClass="FirstViewController" customModule="MoveDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wty-X5-1Hc"/>
                         <viewControllerLayoutGuide type="bottom" id="nk0-Tt-9UV"/>
@@ -21,6 +21,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="E4J-vA-Ooc" kind="show" identifier="showViewController" id="TQF-Hj-QvW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQF-DZ-WcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -39,7 +42,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDJ-L4-gIl">
-                                <rect key="frame" x="166" y="323" width="42" height="21"/>
+                                <rect key="frame" x="279" y="290" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

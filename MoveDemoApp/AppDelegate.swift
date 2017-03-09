@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         Move.setInitialViewController(
-            viewController: .fromStoryBoard(type: ViewController.self)
+            viewController: ViewController.fromStoryBoard()
         )
         
         return true

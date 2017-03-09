@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		029617711E70963900E647BC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029617701E70963900E647BC /* FirstViewController.swift */; };
+		029617731E70964900E647BC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029617721E70964900E647BC /* SecondViewController.swift */; };
 		02BF043E1E68B0ED00E1A946 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02BF043D1E68B0ED00E1A946 /* Main.storyboard */; };
 		02E5A5871E689F7F005B8830 /* Move.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E5A57D1E689F7F005B8830 /* Move.framework */; };
 		02E5A58C1E689F7F005B8830 /* MoveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E5A58B1E689F7F005B8830 /* MoveTests.swift */; };
@@ -21,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0296176E1E7093CD00E647BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02E5A5741E689F7F005B8830 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02E5A57C1E689F7F005B8830;
+			remoteInfo = Move;
+		};
 		02E5A5881E689F7F005B8830 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 02E5A5741E689F7F005B8830 /* Project object */;
@@ -31,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		029617701E70963900E647BC /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		029617721E70964900E647BC /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		02BF043D1E68B0ED00E1A946 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		02E5A57D1E689F7F005B8830 /* Move.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Move.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02E5A5801E689F7F005B8830 /* Move.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Move.h; sourceTree = "<group>"; };
@@ -145,6 +156,8 @@
 			children = (
 				02E5A5A41E68A073005B8830 /* AppDelegate.swift */,
 				02E5A5A61E68A073005B8830 /* ViewController.swift */,
+				029617701E70963900E647BC /* FirstViewController.swift */,
+				029617721E70964900E647BC /* SecondViewController.swift */,
 				02E5A5AB1E68A073005B8830 /* Assets.xcassets */,
 				02BF043D1E68B0ED00E1A946 /* Main.storyboard */,
 				02E5A5AD1E68A073005B8830 /* LaunchScreen.storyboard */,
@@ -210,10 +223,12 @@
 				02E5A59E1E68A073005B8830 /* Sources */,
 				02E5A59F1E68A073005B8830 /* Frameworks */,
 				02E5A5A01E68A073005B8830 /* Resources */,
+				029617741E70969D00E647BC /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0296176F1E7093CD00E647BC /* PBXTargetDependency */,
 			);
 			name = MoveDemoApp;
 			productName = MoveDemoApp;
@@ -295,6 +310,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		029617741E70969D00E647BC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		02E5A5781E689F7F005B8830 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -318,6 +349,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				029617731E70964900E647BC /* SecondViewController.swift in Sources */,
+				029617711E70963900E647BC /* FirstViewController.swift in Sources */,
 				02E5A5A71E68A073005B8830 /* ViewController.swift in Sources */,
 				02E5A5A51E68A073005B8830 /* AppDelegate.swift in Sources */,
 			);
@@ -326,6 +359,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0296176F1E7093CD00E647BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02E5A57C1E689F7F005B8830 /* Move */;
+			targetProxy = 0296176E1E7093CD00E647BC /* PBXContainerItemProxy */;
+		};
 		02E5A5891E689F7F005B8830 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 02E5A57C1E689F7F005B8830 /* Move */;

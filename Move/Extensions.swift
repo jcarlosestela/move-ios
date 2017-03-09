@@ -9,16 +9,49 @@
 import Foundation
 import UIKit
 
+// MARK: - UIViewController
+
 public extension UIViewController {
     
-    static func fromStoryBoard<T>(type: T.Type) -> T {
-        return fromStoryBoard(storyBoard: "Main", type: type)
+    // TODO: - Add method to load from Xib
+    
+    // MARK: - Public methods
+    
+    func viewControllerIdentifier() -> String {
+        return String(describing: self)
     }
     
-    static func fromStoryBoard<T>(storyBoard: String, type: T.Type, bundle: Bundle? = nil, identifier: String? = nil) -> T {
+    // MARK: - Static methods
+    
+    static func fromStoryBoard<T>() -> T {
+        return fromStoryBoard("Main")
+    }
+    
+    static func fromStoryBoard<T>(_ storyboard: String, bundle: Bundle? = nil, identifier: String? = nil) -> T {
         guard let identifier = identifier else {
-            return UIStoryboard(name: storyBoard, bundle: bundle).instantiateViewController(withIdentifier: String(describing: type)) as! T
+            return UIStoryboard(name: storyboard, bundle: bundle).instantiateViewController(withIdentifier: String(describing: self)) as! T
         }
-        return UIStoryboard(name: storyBoard, bundle: bundle).instantiateViewController(withIdentifier: identifier) as! T
+        return UIStoryboard(name: storyboard, bundle: bundle).instantiateViewController(withIdentifier: identifier) as! T
+    }
+}
+
+// MARK: - Array
+
+extension RangeReplaceableCollection where Iterator.Element == MoveInformation {
+    
+    mutating func removeLast(with identifier: String) {
+        let allWithIndentifier = self.filter({
+            $0.identifier == identifier
+        })
+        guard let last = allWithIndentifier.last else {
+            return
+        }
+        self.removeObject(object: last)
+    }
+    
+    mutating func removeObject(object : Generator.Element) {
+        if let index = self.index(of: object) {
+            self.remove(at: index)
+        }
     }
 }
