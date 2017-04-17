@@ -47,6 +47,7 @@ class MoveManager {
                 type: .initial
             )
         )
+        // TODO: - Remove all currents ViewControllers in RootViewController
         UIApplication.shared.delegate?.window??.rootViewController = self.currentViewController
     }
     
@@ -107,9 +108,5 @@ class MoveManager {
             self.movesInfo.removeLast()
             self.currentViewController?.dismiss(animated: animated, completion: nil)
         }
-    }
-    
-    func performSegue(_ identifier: String) {
-        // TODO: Implement this action
     }
 }

@@ -12,9 +12,7 @@ import UIKit
 // MARK: - UIViewController
 
 public extension UIViewController {
-    
-    // TODO: - Add method to load from Xib
-    
+   
     // MARK: - Public methods
     
     func viewControllerIdentifier() -> String {
@@ -22,6 +20,15 @@ public extension UIViewController {
     }
     
     // MARK: - Static methods
+    
+    static func fromXib<T>() -> T {
+        // TODO: Check this method
+        return fromXib(name: String(describing: T.self))
+    }
+    
+    static func fromXib<T>(name: String, bundle: Bundle? = nil) -> T {
+        return UINib(nibName: name, bundle: bundle).instantiate(withOwner: T.self, options: nil).first as! T
+    }
     
     static func fromStoryBoard<T>() -> T {
         return fromStoryBoard("Main")

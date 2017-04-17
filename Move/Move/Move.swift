@@ -42,13 +42,4 @@ public struct Move {
     public static func back(of viewControllerIdentifier: String, animated: Bool) {
         MoveManager.shared.performBackMovement(of: viewControllerIdentifier, animated: animated)
     }
-    
-    /* TODO: Implement this functionallity
-     public static func withSegue(_ identifier: String) {
-        MoveManager.shared.performSegue(identifier)
-    }*/
-}
-
-private extension Move {
-    
 }
