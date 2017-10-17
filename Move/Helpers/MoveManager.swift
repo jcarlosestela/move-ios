@@ -38,7 +38,8 @@ class MoveManager {
     
     // MARK: - Public methods
     
-    func setInitialViewController(viewController: UIViewController) {
+    func setInitialViewController(_ viewController: UIViewController?) {
+        guard let viewController = viewController else { return }
         self.currentViewController = viewController
         self.movesInfo = []
         self.movesInfo.append(
@@ -47,7 +48,7 @@ class MoveManager {
                 type: .initial
             )
         )
-        // TODO: - Remove all currents ViewControllers in RootViewController
+        // TODO: Remove all currents ViewControllers in RootViewController
         UIApplication.shared.delegate?.window??.rootViewController = self.currentViewController
     }
     
@@ -88,7 +89,7 @@ class MoveManager {
             fatalError("You cannot perform back movement with the initial view controller presented")
         case .push:
             self.movesInfo.removeLast(with: viewController)
-            let _ = self.currentViewController?.navigationController?.popViewController(animated: animated)
+            _ = self.currentViewController?.navigationController?.popViewController(animated: animated)
         case .modal:
             self.movesInfo.removeLast(with: viewController)
             self.currentViewController?.dismiss(animated: animated, completion: nil)
@@ -103,7 +104,7 @@ class MoveManager {
             fatalError("You cannot perform back movement with the initial view controller presented")
         case .push:
             self.movesInfo.removeLast()
-            let _ = self.currentViewController?.navigationController?.popViewController(animated: animated)
+            _ = self.currentViewController?.navigationController?.popViewController(animated: animated)
         case .modal:
             self.movesInfo.removeLast()
             self.currentViewController?.dismiss(animated: animated, completion: nil)
