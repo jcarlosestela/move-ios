@@ -16,17 +16,18 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Move"
-  s.version      = "0.0.1"
-  s.summary      = "A short description of Move."
+  s.version      = "1.0.0"
+  s.summary      = "To make easier navigation between viewcontrollers."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "A friendly Framework to perform movements into your application."
+  s.description  = "Move is a framework to make easier all navigation between view controllers. It has been developed mainly to help in projects where the Navigation layer is not in the View Controller.
+"
 
-  s.homepage     = "http://EXAMPLE/Move"
+  s.homepage     = "https://github.com/jcarlosestela/move-ios"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -78,7 +79,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://bitbucket/Move.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/jcarlosestela/move-ios.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -134,6 +135,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 
-  s.dependency "AEXML", "~> 4.0.2"
+  # s.dependency "AEXML", "~> 4.0.2"
 
 end
