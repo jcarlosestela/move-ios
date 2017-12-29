@@ -21,15 +21,15 @@ public extension UIViewController {
     
     // MARK: - Static methods
     
-    static func fromXib<T: UIViewController>(to viewController: T.Type) -> T {
-        return fromXib(name: String(describing: T.self))
+    static func fromXib<T: UIViewController & XibInstantiable>(to viewController: T.Type) -> T {
+        return fromXib(name: viewController.xibName(), bundle: viewController.xibBundle())
     }
     
-    static func fromXib<T: UIViewController>() -> T {
-        return fromXib(name: String(describing: T.self))
+    static func fromXib<T: UIViewController & XibInstantiable>() -> T {
+        return fromXib(name: T.xibName(), bundle: T.xibBundle())
     }
     
-    static func fromXib<T: UIViewController>(name: String, bundle: Bundle? = nil) -> T {
+    static private func fromXib<T: UIViewController>(name: String, bundle: Bundle?) -> T {
         return T(nibName: name, bundle: bundle)
     }
     
@@ -41,7 +41,7 @@ public extension UIViewController {
         return fromStoryBoard("Main")
     }
     
-    static func fromStoryBoard<T>(_ storyboard: String, bundle: Bundle? = nil, identifier: String? = nil) -> T? {
+    static private func fromStoryBoard<T>(_ storyboard: String, bundle: Bundle? = nil, identifier: String? = nil) -> T? {
         guard let identifier = identifier else {
             return UIStoryboard(name: storyboard, bundle: bundle).instantiateViewController(withIdentifier: String(describing: self)) as? T
         }

@@ -31,11 +31,11 @@ public struct Move {
         }
     }
     
-    public static func back(animated: Bool) {
+    public static func back(animated: Bool = false) {
         MoveManager.shared.performBackMovement(animated: animated)
     }
     
-    public static func back(of viewControllerIdentifier: String, animated: Bool) {
+    public static func back(of viewControllerIdentifier: String, animated: Bool = false) {
         MoveManager.shared.performBackMovement(of: viewControllerIdentifier, animated: animated)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		022614271FC20DC70049CD1C /* Instantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022614261FC20DC70049CD1C /* Instantiable.swift */; };
 		027673B91F95EECA00990F10 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027673B71F95EEC900990F10 /* Extensions.swift */; };
 		027673BA1F95EECA00990F10 /* MoveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027673B81F95EEC900990F10 /* MoveManager.swift */; };
 		027673BD1F95EEDA00990F10 /* Move.h in Headers */ = {isa = PBXBuildFile; fileRef = 027673BB1F95EEDA00990F10 /* Move.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		022614261FC20DC70049CD1C /* Instantiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Instantiable.swift; path = Helpers/Instantiable.swift; sourceTree = "<group>"; };
 		027673B71F95EEC900990F10 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Helpers/Extensions.swift; sourceTree = "<group>"; };
 		027673B81F95EEC900990F10 /* MoveManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoveManager.swift; path = Helpers/MoveManager.swift; sourceTree = "<group>"; };
 		027673BB1F95EEDA00990F10 /* Move.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Move.h; path = Move/Move.h; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		02E5A5981E689FB9005B8830 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				022614261FC20DC70049CD1C /* Instantiable.swift */,
 				027673B71F95EEC900990F10 /* Extensions.swift */,
 				027673B81F95EEC900990F10 /* MoveManager.swift */,
 			);
@@ -253,6 +256,7 @@
 				027673BA1F95EECA00990F10 /* MoveManager.swift in Sources */,
 				027673BE1F95EEDA00990F10 /* Move.swift in Sources */,
 				027673B91F95EECA00990F10 /* Extensions.swift in Sources */,
+				022614271FC20DC70049CD1C /* Instantiable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
