@@ -63,7 +63,7 @@ extension RangeReplaceableCollection where Iterator.Element == MoveInformation {
         self.removeObject(object: last)
     }
     
-    mutating func removeObject(object : Generator.Element) {
+    mutating func removeObject(object : Iterator.Element) {
         if let index = self.index(of: object) {
             self.remove(at: index)
         }
