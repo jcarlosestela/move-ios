@@ -38,8 +38,7 @@ class MoveManager {
     
     // MARK: - Public methods
     
-    func setInitialViewController(_ viewController: UIViewController?) {
-        guard let viewController = viewController else { return }
+    func setInitialViewController(_ viewController: UIViewController) {
         self.currentViewController = viewController
         self.movesInfo = []
         self.movesInfo.append(

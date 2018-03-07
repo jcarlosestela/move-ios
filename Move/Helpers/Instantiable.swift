@@ -26,6 +26,15 @@ public extension StoryBoardInstantiable where Self: UIViewController {
     static func storyboardName() -> String {
         return "Main"
     }
+    
+    static func fromStoryBoard() -> Self? {
+        return UIStoryboard(
+            name: Self.storyboardName(),
+            bundle: Self.storyboardBundle()
+        ).instantiateViewController(
+            withIdentifier: Self.storyboardIdentifier()
+        ) as? Self
+    }
 }
 
 public protocol XibInstantiable {
@@ -41,5 +50,12 @@ public extension XibInstantiable where Self: UIViewController {
     
     static func xibBundle() -> Bundle? {
         return nil
+    }
+    
+    static func fromXib() -> Self {
+        return Self(
+            nibName: Self.xibName(),
+            bundle: Self.xibBundle()
+        )
     }
 }

@@ -13,7 +13,7 @@ Move is a framework to make easier all navigations between view controllers. It 
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. Add this line to your Cartfile.
 
 ```
-github "jcarlosestela/move-ios" ~> 1.0
+github "jcarlosestela/move-ios" ~> 0.1
 ```
 
 ### CocoaPods
@@ -22,7 +22,7 @@ github "jcarlosestela/move-ios" ~> 1.0
 Add this line to your Podfile.
 
 ```
-pod "Move" ~> 1.0
+pod "Move" ~> 0.1
 ```
 
 ## Usage
@@ -55,24 +55,21 @@ Move.back()
 
 The SDK provides some helpers to instantiate a ViewController from StoryBoard or Xib easier:
 
-### Storyboard
+### Storyboard & Xib
+
+You have to conform the protocol StoryboardInstantiable or the XibInstantiable for this purpose.
 
 If you want to instantiate the view controller and add some context data:
 
 ```swift
-let viewController = ViewController.fromStoryBoard(to: FirstViewController.self)
+let viewController = FirstViewController.fromStoryBoard()
+let viewController = FirstViewController.fromStoryXib()
 viewControler.data = ...
 Move.to(viewController: viewController, type: .push)
 ```
 
-If you want to instantiate the view controller without adding data:
+If you just want to move to the view controller without adding data:
 
 ```swift
-Move.to(viewController: FirstViewController.fromStoryBoard(), type: .push)
-```
-
-Also, if your ViewController is not in the Main StoryBoard or Main Bundle, you can call this method to instantiate it:
-
-```swift
-
+Move.to(viewController: FirstViewController.self, type: .push)
 ```

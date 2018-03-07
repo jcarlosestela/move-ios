@@ -18,8 +18,24 @@ public struct Move {
     
     // MARK: - Public methods
     
-    public static func toInitial(viewController: UIViewController?) {
+    public static func toInitial<T: UIViewController & StoryBoardInstantiable>(viewController: T.Type) {
+        self.toInitial(viewController: T.fromStoryBoard() ?? UIViewController())
+    }
+    
+    public static func toInitial<T: UIViewController & XibInstantiable>(viewController: T.Type) {
+        self.toInitial(viewController: T.fromXib())
+    }
+    
+    public static func toInitial(viewController: UIViewController) {
         MoveManager.shared.setInitialViewController(viewController)
+    }
+    
+    public static func to<T: UIViewController & StoryBoardInstantiable>(viewController: T.Type, type: MoveType = .push, animated: Bool = false, completion: (() -> Void)? = nil) {
+        self.to(viewController: T.fromStoryBoard() ?? UIViewController(), type: type, animated: animated, completion: completion)
+    }
+    
+    public static func to<T: UIViewController & XibInstantiable>(viewController: T.Type, type: MoveType = .push, animated: Bool = false, completion: (() -> Void)? = nil) {
+        self.to(viewController: T.fromXib(), type: type, animated: animated, completion: completion)
     }
     
     public static func to(viewController: UIViewController, type: MoveType = .push, animated: Bool = false, completion: (() -> Void)? = nil) {
